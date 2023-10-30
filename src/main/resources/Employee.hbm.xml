@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--    For hibernateDemo   -->
+    <class name="com.david.hibernateDemo.Employee" table="Employee">
+        <meta attribute="class-description">
+            This class contains the employee detail
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="salary" column="salary" type="int"/>
+
+    </class>
+    <!--    For hibernateDemo   -->
+
+    <!--    For ORMappingSet    -->
+    <!--<class name="com.david.ORMappingSet.Employee" table="EMPLOYEE">
+
+        <meta attribute="class-description">
+            This class contains the employee detail.
+        </meta>
+
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+
+        <set name="certificates" cascade="all">
+            <key column="employee_id"/>
+            <one-to-many class="com.david.ORMappingSet.Certificate"/>
+        </set>
+
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="salary" column="salary" type="int"/>
+
+    </class>
+
+    <class name="com.david.ORMappingSet.Certificate" table="CERTIFICATE">
+
+        <meta attribute="class-description">
+            This class contains the certificate records.
+        </meta>
+
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="name" column="certificate_name" type="string"/>
+
+    </class>-->
+    <!--    For ORMappingSet    -->
+
+    <!--    For ORMappingSortedSet    -->
+    <!--<class name="com.david.ORMappingSortedSet.Employee" table="EMPLOYEE">
+        <meta attribute="class-description">
+            This class contains the employee detail.
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <set name="certificates" cascade="all" sort="com.david.ORMappingSortedSet.MyComparatorClass">
+            <key column="employee_id"/>
+            <one-to-many class="com.david.ORMappingSortedSet.Certificate"/>
+        </set>
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="salary" column="salary" type="int"/>
+    </class>
+
+    <class name="com.david.ORMappingSortedSet.Certificate" table="CERTIFICATE">
+        <meta attribute="class-description">
+            This class contains the certificate records.
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="certificate_name" type="string"/>
+    </class>-->
+    <!--    For ORMappingSortedSet    -->
+
+    <!--    For ORMappingList    -->
+    <!--<class name="com.david.ORMappingList.Employee" table="EMPLOYEE">
+
+        <meta attribute="class-description">
+            This class contains the employee detail.
+        </meta>
+
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+
+        <list name="certificates" cascade="all">
+            <key column="employee_id"/>
+            <list-index column="idx"/>
+            <one-to-many class="com.david.ORMappingList.Certificate"/>
+        </list>
+
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="salary" column="salary" type="int"/>
+
+    </class>
+
+    <class name="com.david.ORMappingList.Certificate" table="CERTIFICATE">
+
+        <meta attribute="class-description">
+            This class contains the certificate records.
+        </meta>
+
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="name" column="certificate_name" type="string"/>
+
+    </class>-->
+    <!--    For ORMappingList    -->
+
+    <!--    For ORMappingCollection    -->
+    <!--<class name="com.david.ORMappingBag.Employee" table="EMPLOYEE">
+
+        <meta attribute="class-description">
+            This class contains the employee detail.
+        </meta>
+
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+
+        <bag name="certificates" cascade="all">
+            <key column="employee_id"/>
+            <one-to-many class="com.david.ORMappingBag.Certificate"/>
+        </bag>
+
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="salary" column="salary" type="int"/>
+
+    </class>
+
+    <class name="com.david.ORMappingBag.Certificate" table="CERTIFICATE">
+
+        <meta attribute="class-description">
+            This class contains the certificate records.
+        </meta>
+
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="name" column="certificate_name" type="string"/>
+
+    </class>-->
+    <!--    For ORMappingCollection    -->
+
+    <!--    For ORMappingMap    -->
+    <!--<class name="com.david.ORMappingMap.Employee" table="EMPLOYEE">
+        <meta attribute="class-description">
+            This class contains the employee detail.
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <map name="certificates" cascade="all">
+            <key column="employee_id"/>
+            <index column="certificate_type" type="string"/>
+            <one-to-many class="com.david.ORMappingMap.Certificate"/>
+        </map>
+        <property name="firstName" column="first_name" type="string"/>
+        <property name="lastName" column="last_name" type="string"/>
+        <property name="salary" column="salary" type="int"/>
+    </class>
+
+    <class name="com.david.ORMappingMap.Certificate" table="CERTIFICATE">
+        <meta attribute="class-description">
+            This class contains the certificate records.
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="certificate_name" type="string"/>
+    </class>-->
+    <!--    For ORMappingMap    -->
+
+
+</hibernate-mapping>
